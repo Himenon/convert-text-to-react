@@ -1,0 +1,48 @@
+{
+  "name": "convert-text-to-react",
+  "version": "1.0.0",
+  "description": "プレーンテキストをReactに変換する",
+  "main": "lib/index.js",
+  "types": "lib/index.ts",
+  "scripts": {
+    "start": "npm run build -- --watch",
+    "build": "tsc -p tsconfig.json",
+    "format": "tslint -c tslint.json -p tsconfig.json --fix",
+    "test": "jest -c jest.config.json --detectOpenHandles",
+    "test:watch": "npm run test -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Himenon/convert-text-to-react.git"
+  },
+  "keywords": [
+    "react",
+    "parser"
+  ],
+  "author": "Himenon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Himenon/convert-text-to-react/issues"
+  },
+  "homepage": "https://github.com/Himenon/convert-text-to-react#readme",
+  "dependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-transform-react-jsx": "^7.1.6",
+    "@babel/standalone": "^7.1.0",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.10",
+    "@types/node": "^10.12.11",
+    "@types/react": "^16.7.11",
+    "@types/react-dom": "^16.0.11",
+    "jest": "^23.6.0",
+    "jest-cli": "^23.6.0",
+    "ts-jest": "^23.10.5",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "typescript": "^3.2.1"
+  }
+}

@@ -1,11 +1,9 @@
-import * as objectRestSpread from "@babel/plugin-proposal-object-rest-spread";
-import * as transformJSX from "@babel/plugin-transform-react-jsx";
-import * as babelStandAlone from "@babel/standalone";
+import * as babel from "@babel/core";
 import * as React from "react";
 
 export const toJSX = (raw: string): string | null =>
-  babelStandAlone.transform(raw, {
-    plugins: [transformJSX, objectRestSpread],
+  babel.transform(raw, {
+    plugins: ["@babel/plugin-transform-react-jsx", "@babel/plugin-syntax-object-rest-spread"],
   }).code;
 
 interface CustomComponentProps {

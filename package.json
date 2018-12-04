@@ -29,9 +29,8 @@
   "homepage": "https://github.com/Himenon/convert-text-to-react#readme",
   "dependencies": {
     "@babel/core": "^7.1.6",
-    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-syntax-object-rest-spread": "^7.2.0",
     "@babel/plugin-transform-react-jsx": "^7.1.6",
-    "@babel/standalone": "^7.1.0",
     "react": "^16.6.3"
   },
   "devDependencies": {

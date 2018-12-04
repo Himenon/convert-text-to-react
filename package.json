@@ -1,13 +1,15 @@
 {
   "name": "convert-text-to-react",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "プレーンテキストをReactに変換する",
   "main": "lib/index.js",
   "types": "lib/index.ts",
   "scripts": {
     "start": "npm run build -- --watch",
     "build": "tsc -p tsconfig.json",
-    "format": "tslint -c tslint.json -p tsconfig.json --fix",
+    "format": "npm run prettier && npm run lint:fix",
+    "prettier": "prettier --config .prettierrc --write src/*.{ts,tsx}",
+    "lint:fix": "tslint -c tslint.json -p tsconfig.json --fix",
     "test": "jest -c jest.config.json --detectOpenHandles",
     "test:watch": "npm run test -- --watch"
   },
@@ -30,19 +32,23 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/plugin-transform-react-jsx": "^7.1.6",
     "@babel/standalone": "^7.1.0",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3"
+    "react": "^16.6.3"
   },
   "devDependencies": {
     "@types/jest": "^23.3.10",
     "@types/node": "^10.12.11",
     "@types/react": "^16.7.11",
     "@types/react-dom": "^16.0.11",
+    "react-dom": "^16.6.3",
     "jest": "^23.6.0",
     "jest-cli": "^23.6.0",
+    "prettier": "^1.15.3",
     "ts-jest": "^23.10.5",
     "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.17.0",
+    "tslint-config-standard": "^8.0.1",
+    "tslint-plugin-prettier": "^2.0.1",
     "typescript": "^3.2.1"
   }
 }

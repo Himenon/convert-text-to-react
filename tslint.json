@@ -1,13 +1,32 @@
 {
     "defaultSeverity": "error",
     "extends": [
-        "tslint:recommended"
+        "tslint:recommended",
+        "tslint:latest",
+        "tslint-plugin-prettier",
+        "tslint-config-prettier"
     ],
     "jsRules": {},
     "rules": {
+        "indent": [true, "spaces", 2],
         "trailing-comma": true,
         "interface-name": false,
-        "no-console": false
+        "no-console": false,
+        "no-submodule-imports": false,
+        "no-implicit-dependencies": [false, "optional"]
     },
-    "rulesDirectory": []
+    "rulesDirectory": [
+        "tslint-plugin-prettier"
+    ],
+    "prettier": [true, {
+        "useTabs": false,
+        "printWidth": 140,
+        "tabWidth": 2,
+        "singleQuote": false,
+        "trailingComma": "all",
+        "jsxBracketSameLine": false,
+        "parser": "typescript",
+        "bracketSpacing": true,
+        "semi": true
+    }]
 }

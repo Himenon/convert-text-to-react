@@ -2,3 +2,29 @@ language: node_js
 cache: yarn
 node_js:
   - "10.0.0"
+
+branches:
+  only:
+  - master
+
+stages:
+- name: test
+  if: branch = master
+- name: deploy
+  if: branch = master
+
+jobs:
+  include:
+  - stage: test
+    script: yarn test
+    node_js:
+    - '10'
+  - stage: deploy
+    script:
+    - yarn install
+    - yarn build
+    - echo '//registry.npmjs.org/:_authToken="${NPM_TOKEN}"' >> .npmrc
+    - npm publish
+    - cp .npmrc.template .npmrc
+    node_js:
+    - '10'

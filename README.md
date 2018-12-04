@@ -10,11 +10,17 @@ npm i convert-text-to-react
 
 ```ts
 import * as ReactDOM from "react-dom/server";
-import { toJSX, convert } from "convert-text-to-react";
+import { toJSX, convert, ExampleComponent } from "convert-text-to-react";
 
-const inputText = "<CustomComponent x={1} y={-20}>Result of multiplication:</CustomComponent>";
+const inputText = "<ExampleComponent x={1} y={-20}>Result of multiplication:</ExampleComponent>";
+
+const components = {
+  ExampleComponent,
+}
+
 const jsxText = toJSX(inputText);
-const value = convert(jsxText!);
+const converter = createConverter(components);
+const value = converter(jsxText!);
 
 console.log(ReactDOM.renderToStaticMarkup(value);)
 // <div class="my-component">Result of multiplication: -20</div>

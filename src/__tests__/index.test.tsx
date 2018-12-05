@@ -22,8 +22,7 @@ test("transformText", () => {
 });
 
 test("parseIncludeReactComponent", () => {
-  const jsxText = toJSX(INPUT_TEXT);
   const converter = createConverter(components);
-  const result = ReactDOM.renderToStaticMarkup(converter(jsxText!));
+  const result = ReactDOM.renderToStaticMarkup(converter(INPUT_TEXT));
   expect(result).toEqual(`<div class="my-component">Result of multiplication: -20</div>`);
 });

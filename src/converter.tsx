@@ -6,7 +6,8 @@ export const toJSX = (raw: string): string | null =>
     plugins: ["@babel/plugin-transform-react-jsx", "@babel/plugin-syntax-object-rest-spread"],
   }).code;
 
-export const createConverter = (components: object) => (code: string): React.ReactElement<any> => {
+export const createConverter = (components: object) => (raw: string): React.ReactElement<any> => {
+  const code = toJSX(raw);
   const keys = Object.keys(components);
   const values = keys.map(key => components[key]);
   const create = new Function("React", ...keys, `return props => ${code}`);

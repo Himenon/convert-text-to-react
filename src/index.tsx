@@ -1,2 +1,2 @@
-export { toJSX, createConverter } from "./converter";
+export { toCode, convert } from "./converter";
 export { ExampleComponent, ExampleComponentProps } from "./example";

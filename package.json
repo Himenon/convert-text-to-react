@@ -1,6 +1,6 @@
 {
   "name": "convert-text-to-react",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "プレーンテキストをReactに変換する",
   "main": "lib/index.js",
   "types": "lib/index.ts",

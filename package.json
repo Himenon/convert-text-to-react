@@ -3,7 +3,7 @@
   "version": "0.2.3",
   "description": "プレーンテキストをReactに変換する",
   "main": "lib/index.js",
-  "types": "lib/index.ts",
+  "types": "lib/index.d.ts",
   "scripts": {
     "start": "npm run build -- --watch",
     "build": "tsc -p tsconfig.build.json",
@@ -13,6 +13,12 @@
     "test": "jest -c jest.config.json --detectOpenHandles",
     "test:watch": "npm run test -- --watch"
   },
+  "files": [
+    "lib",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Himenon/convert-text-to-react.git"
